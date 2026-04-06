@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems. :: Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</title>
+    <link rel="prev" href="preparing-rhocp-for-rhoso-networks.html">
+    <link rel="next" href="../hands-on-lab/hands-on-lab.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-demo-aks" data-version="1.0.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="preparing-rhocp-for-rhoso-networks.html">Preparing RHOCP for RHOSO Networks</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="namespaced-resources-understanding-their-importance-for-getting-the-status-of-the-rhoso-cluster-and-troubleshooting-problems.html">Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems.</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../hands-on-lab/hands-on-lab.html">Hands-on Lab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../hands-on-lab/setting-up-a-rhocp-cluster.html">Setting up a RHOCP cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../hands-on-lab/deploying-rhoso-on-the-rhocp-cluster.html">Deploying RHOSO on the RHOCP cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../hands-on-lab/configuring-namespaced-resources-for-rhoso.html">Configuring namespaced resources for RHOSO</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</span>
+    <span class="version">1.0.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a></li>
+    <li><a href="preparing-rhocp-for-rhoso-networks.html">Preparing RHOCP for RHOSO Networks</a></li>
+    <li><a href="namespaced-resources-understanding-their-importance-for-getting-the-status-of-the-rhoso-cluster-and-troubleshooting-problems.html">Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems.</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems.</h1>
+<div class="sect1">
+<h2 id="_namespaced_resources_understanding_their_importance_for_rhoso_cluster_status_and_troubleshooting"><a class="anchor" href="#_namespaced_resources_understanding_their_importance_for_rhoso_cluster_status_and_troubleshooting"></a>Namespaced Resources: Understanding Their Importance for RHOSO Cluster Status and Troubleshooting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the context of Red Hat OpenStack Services on OpenShift (RHOSO), namespaced resources play a crucial role in managing and monitoring the RHOSO cluster&#8217;s health and performance. Namespaces provide a scope for naming resources and are used for organizing objects, such as pods, services, and deployments, to prevent naming conflicts.</p>
+</div>
+<div class="sect2">
+<h3 id="_rhoso_custom_resource_definitions_crds"><a class="anchor" href="#_rhoso_custom_resource_definitions_crds"></a>RHOSO Custom Resource Definitions (CRDs)</h3>
+<div class="paragraph">
+<p>RHOSO introduces several Custom Resource Definitions (CRDs) that extend the Kubernetes API to support OpenStack control plane components. These CRDs are essential for managing RHOSO-specific resources and are defined within specific namespaces, primarily the <code>openstack</code> namespace.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rhoso_applied_custom_resources_crs"><a class="anchor" href="#_rhoso_applied_custom_resources_crs"></a>RHOSO Applied Custom Resources (CRs)</h3>
+<div class="paragraph">
+<p>Custom Resources (CRs) are instances of Custom Resource Definitions (CRDs). In RHOSO, CRs represent OpenStack services, such as Nova, Neutron, Glance, and others. These CRs are deployed within the <code>openstack</code> namespace and are monitored to ensure the proper functioning of the RHOSO control plane.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openstack_and_openstack_operators_namespaces"><a class="anchor" href="#_openstack_and_openstack_operators_namespaces"></a>Openstack and Openstack-operators Namespaces</h3>
+<div class="paragraph">
+<p>The <code>openstack</code> namespace is where most RHOSO control plane components reside. The <code>openstack-operators</code> namespace, on the other hand, contains the RHOSO Operators, which manage the lifecycle of OpenStack services within the cluster. Monitoring resources in both namespaces is essential for understanding the overall RHOSO cluster status.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rhocp_events_related_to_rhoso_namespaces"><a class="anchor" href="#_rhocp_events_related_to_rhoso_namespaces"></a>RHOCP Events Related to RHOSO Namespaces</h3>
+<div class="paragraph">
+<p>RHOCP events provide valuable insights into the cluster&#8217;s health and can help identify issues related to RHOSO namespaces. Events are associated with Kubernetes objects and can indicate problems with pods, deployments, or other resources within the RHOSO namespaces. Regularly inspecting RHOCP events can help in early detection and resolution of potential issues.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pods_deployments_statefulsets_replicasets_service_routes_configmaps_and_relevant_secrets"><a class="anchor" href="#_pods_deployments_statefulsets_replicasets_service_routes_configmaps_and_relevant_secrets"></a>Pods, Deployments, Statefulsets, ReplicaSets, Service, Routes, ConfigMaps, and Relevant Secrets</h3>
+<div class="paragraph">
+<p>Monitoring various Kubernetes objects within the RHOSO namespaces is crucial for understanding the cluster&#8217;s status and troubleshooting problems. These objects include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Pods</strong>: The smallest deployable units in Kubernetes, representing a single instance of a running process in the RHOSO cluster.</p>
+</li>
+<li>
+<p><strong>Deployments</strong>: Ensure that a specified number of pod replicas are running</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="preparing-rhocp-for-rhoso-networks.html">Preparing RHOCP for RHOSO Networks</a></span>
+  <span class="next"><a href="../hands-on-lab/hands-on-lab.html">Hands-on Lab</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Setting up a RHOCP cluster :: Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</title>
+    <link rel="prev" href="hands-on-lab.html">
+    <link rel="next" href="deploying-rhoso-on-the-rhocp-cluster.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-demo-aks" data-version="1.0.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../preparing-rhocp-for-rhoso-networks/preparing-rhocp-for-rhoso-networks.html">Preparing RHOCP for RHOSO Networks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../preparing-rhocp-for-rhoso-networks/namespaced-resources-understanding-their-importance-for-getting-the-status-of-the-rhoso-cluster-and-troubleshooting-problems.html">Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems.</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="hands-on-lab.html">Hands-on Lab</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="setting-up-a-rhocp-cluster.html">Setting up a RHOCP cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="deploying-rhoso-on-the-rhocp-cluster.html">Deploying RHOSO on the RHOCP cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configuring-namespaced-resources-for-rhoso.html">Configuring namespaced resources for RHOSO</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</span>
+    <span class="version">1.0.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a></li>
+    <li><a href="hands-on-lab.html">Hands-on Lab</a></li>
+    <li><a href="setting-up-a-rhocp-cluster.html">Setting up a RHOCP cluster</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Setting up a RHOCP cluster</h1>
+<div class="sect1">
+<h2 id="_setting_up_a_rhocp_cluster"><a class="anchor" href="#_setting_up_a_rhocp_cluster"></a>Setting up a RHOCP Cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section will guide you through the process of setting up a Red Hat OpenShift Container Platform (RHOCP) cluster, a prerequisite for deploying Red Hat OpenStack Services on OpenShift (RHOSO).</p>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
+<div class="paragraph">
+<p>Before you begin, ensure you have the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Access to a workstation with cluster-admin privileges to the RHOCP cluster.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_by_step_guide"><a class="anchor" href="#_step_by_step_guide"></a>Step-by-Step Guide</h3>
+<div class="sect3">
+<h4 id="_3_2_preparing_rhocp_for_rhoso_networks"><a class="anchor" href="#_3_2_preparing_rhocp_for_rhoso_networks"></a>3.2. PREPARING RHOCP FOR RHOSO NETWORKS</h4>
+<div class="paragraph">
+<p>Before deploying RHOSO, it&#8217;s crucial to prepare your RHOCP cluster for RHOSO networks. This involves using the NMState Operator to connect the RHOCP worker nodes to your isolated networks.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_3_2_1_preparing_rhocp_with_isolated_network_interfaces"><a class="anchor" href="#_3_2_1_preparing_rhocp_with_isolated_network_interfaces"></a>3.2.1. Preparing RHOCP with isolated network interfaces</h4>
+<div class="paragraph">
+<p>To configure the interfaces for each isolated network on each worker node in the RHOCP cluster, you need to create a NodeNetworkConfigurationPolicy (nncp) CR. Here’s a simplified version of the process:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Install the NMState Operator</strong>: If not already installed, you can install the NMState Operator using the OpenShift OperatorHub or by following the official NMState Operator installation guide.</p>
+</li>
+<li>
+<p><strong>Create a NodeNetworkConfigurationPolicy (nncp) CR</strong>: This CR defines the desired network state for your nodes. Here’s a basic example:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">apiVersion: nmstate.io/v1alpha1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: &lt;desired-state-name&gt;
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: &lt;node-name&gt;
+  desiredState:
+    interfaces:
+    - name: &lt;interface-name&gt;
+      type: ethernet
+      state: up
+      ipv4:
+        address:
+          - &lt;IP-address&gt;/24
+        gateway4: &lt;gateway-IP&gt;
+        dns-nameservers:
+          - &lt;DNS-server-IP&gt;
+        autoconf: false
+        method: static
+    interfaces:
+    - name: &lt;interface-name&gt;-isolated
+      type: ethernet
+      state: up
+      ipv4:
+        address:
+          - &lt;isolated-IP-address&gt;/24
+        gateway4: &lt;isolated-gateway-IP&gt;
+        dns-nameservers:
+          - &lt;DNS-server-IP&gt;
+        autoconf:</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="hands-on-lab.html">Hands-on Lab</a></span>
+  <span class="next"><a href="deploying-rhoso-on-the-rhocp-cluster.html">Deploying RHOSO on the RHOCP cluster</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deploying RHOSO on the RHOCP cluster :: Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</title>
+    <link rel="prev" href="setting-up-a-rhocp-cluster.html">
+    <link rel="next" href="configuring-namespaced-resources-for-rhoso.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rcb-demo-aks" data-version="1.0.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../preparing-rhocp-for-rhoso-networks/preparing-rhocp-for-rhoso-networks.html">Preparing RHOCP for RHOSO Networks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../preparing-rhocp-for-rhoso-networks/namespaced-resources-understanding-their-importance-for-getting-the-status-of-the-rhoso-cluster-and-troubleshooting-problems.html">Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems.</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="hands-on-lab.html">Hands-on Lab</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="setting-up-a-rhocp-cluster.html">Setting up a RHOCP cluster</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="deploying-rhoso-on-the-rhocp-cluster.html">Deploying RHOSO on the RHOCP cluster</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="configuring-namespaced-resources-for-rhoso.html">Configuring namespaced resources for RHOSO</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../appendix/appendix.html">Appendix</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</span>
+    <span class="version">1.0.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.0.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline</a></li>
+    <li><a href="hands-on-lab.html">Hands-on Lab</a></li>
+    <li><a href="deploying-rhoso-on-the-rhocp-cluster.html">Deploying RHOSO on the RHOCP cluster</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Deploying RHOSO on the RHOCP cluster</h1>
+<div class="sect1">
+<h2 id="_deploying_red_hat_openstack_services_on_openshift_rhoso"><a class="anchor" href="#_deploying_red_hat_openstack_services_on_openshift_rhoso"></a>Deploying Red Hat OpenStack Services on OpenShift (RHOSO)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>3.2. Deploying RHOSO on the RHOCP Cluster</p>
+</div>
+<div class="paragraph">
+<p>After preparing the RHOCP cluster and namespaced resources, the next step is to deploy RHOSO on the RHOCP cluster. This process involves several key activities:</p>
+</div>
+<div class="paragraph">
+<p>3.2.1. Prerequisites</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ensure that the RHOSO environment is deployed on a Red Hat OpenShift Container Platform (RHOCP) cluster. For detailed instructions, refer to the Deploying Red Hat OpenStack Services on OpenShift guide.</p>
+</li>
+<li>
+<p>Log in to a workstation with access to the RHOCP cluster as a user with cluster-admin privileges.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>3.2.2. Deploying RHOSO</p>
+</div>
+<div class="paragraph">
+<p>To deploy RHOSO on the RHOCP cluster, follow these steps:</p>
+</div>
+<div class="paragraph">
+<p><strong>Step 1: Access the RHOCP Console</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open your web browser and navigate to the RHOCP console. The URL typically follows this pattern: <code><a href="https://&lt;cluster_name&gt;-&lt;domain_name&gt;.apps.example.com" class="bare">https://&lt;cluster_name&gt;-&lt;domain_name&gt;.apps.example.com</a></code>. Replace <code>&lt;cluster_name&gt;</code> and <code>&lt;domain_name&gt;</code> with your actual cluster name and domain.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Step 2: Create a New Project</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Once logged in, create a new project for RHOSO deployment. This helps in organizing resources and maintaining a clear separation between different environments. To create a new project, click on "Projects" in the left-hand menu, then click "Create Project." Enter a name for your project (e.g., <code>rhoso-project</code>) and click "Create."</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Step 3: Deploy RHOSO Operator</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the RHOCP console, navigate to "Operators" &gt; "OperatorHub." Search for "Red Hat OpenStack Services on OpenShift" and click on the operator card. Click "Install" and follow the prompts to install the RHOSO Operator in your newly created project.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Step 4: Create RHOSO Custom Resource</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>After the RHOSO Operator is installed, navigate to "Operators" &gt; "Installed Operators" and click on the "Red Hat OpenStack Services on OpenShift" operator. Click "Create OpenStack Control Plane" to create a new RHOSO Custom Resource (CR). Fill in the necessary details, such as the CR name, and configure the required settings, including</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="setting-up-a-rhocp-cluster.html">Setting up a RHOCP cluster</a></span>
+  <span class="next"><a href="configuring-namespaced-resources-for-rhoso.html">Configuring namespaced resources for RHOSO</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
