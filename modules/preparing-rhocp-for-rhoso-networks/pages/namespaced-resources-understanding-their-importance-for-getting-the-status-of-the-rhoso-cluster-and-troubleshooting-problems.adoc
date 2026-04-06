@@ -1,0 +1,28 @@
+#  Namespaced resources: Understanding their importance for getting the status of the RHOSO cluster and troubleshooting problems.
+
+== Namespaced Resources: Understanding Their Importance for RHOSO Cluster Status and Troubleshooting
+
+In the context of Red Hat OpenStack Services on OpenShift (RHOSO), namespaced resources play a crucial role in managing and monitoring the RHOSO cluster's health and performance. Namespaces provide a scope for naming resources and are used for organizing objects, such as pods, services, and deployments, to prevent naming conflicts.
+
+### RHOSO Custom Resource Definitions (CRDs)
+
+RHOSO introduces several Custom Resource Definitions (CRDs) that extend the Kubernetes API to support OpenStack control plane components. These CRDs are essential for managing RHOSO-specific resources and are defined within specific namespaces, primarily the `openstack` namespace.
+
+### RHOSO Applied Custom Resources (CRs)
+
+Custom Resources (CRs) are instances of Custom Resource Definitions (CRDs). In RHOSO, CRs represent OpenStack services, such as Nova, Neutron, Glance, and others. These CRs are deployed within the `openstack` namespace and are monitored to ensure the proper functioning of the RHOSO control plane.
+
+### Openstack and Openstack-operators Namespaces
+
+The `openstack` namespace is where most RHOSO control plane components reside. The `openstack-operators` namespace, on the other hand, contains the RHOSO Operators, which manage the lifecycle of OpenStack services within the cluster. Monitoring resources in both namespaces is essential for understanding the overall RHOSO cluster status.
+
+### RHOCP Events Related to RHOSO Namespaces
+
+RHOCP events provide valuable insights into the cluster's health and can help identify issues related to RHOSO namespaces. Events are associated with Kubernetes objects and can indicate problems with pods, deployments, or other resources within the RHOSO namespaces. Regularly inspecting RHOCP events can help in early detection and resolution of potential issues.
+
+### Pods, Deployments, Statefulsets, ReplicaSets, Service, Routes, ConfigMaps, and Relevant Secrets
+
+Monitoring various Kubernetes objects within the RHOSO namespaces is crucial for understanding the cluster's status and troubleshooting problems. These objects include:
+
+- **Pods**: The smallest deployable units in Kubernetes, representing a single instance of a running process in the RHOSO cluster.
+- **Deployments**: Ensure that a specified number of pod replicas are running

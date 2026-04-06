@@ -1,0 +1,20 @@
+#  Preparing RHOCP for RHOSO Networks
+
+**3.2. Preparing RHOCP for RHOSO Networks**
+
+This section focuses on the necessary preparations for Red Hat OpenShift Container Platform (RHOCP) to support Red Hat OpenStack Services on OpenShift (RHOSO) networks.
+
+- **3.2.1. Understanding Namespaced Resources**
+  - Explanation of namespaced resources and their significance in obtaining the status of the RHOSO cluster and troubleshooting issues.
+
+- **3.2.2. Prerequisites**
+  - An operational RHOCP cluster, version 4.18, is required. Refer to the Red Hat OpenShift Container Platform cluster requirements for deployment planning.
+  - Minimum hardware requirements for hosting the RHOSO control plane should be met.
+  - Minimum network requirements for RHOCP should be satisfied.
+
+- **3.2.3. Preparing RHOCP for RHOSO Network VIPs**
+  - Instructions on how to prepare RHOCP for RHOSO network Virtual IPs (VIPs).
+
+- **3.4. Additional Resources**
+  - Information on adding routes to RHOCP networks.
+  - Guidance on configuring Networker nodes.

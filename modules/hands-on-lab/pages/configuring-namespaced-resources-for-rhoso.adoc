@@ -1,0 +1,60 @@
+#  Configuring namespaced resources for RHOSO
+
+== Configuring Namespaced Resources for RHOSO
+
+In this section, we will guide you through the process of configuring namespaced resources for Red Hat OpenStack Services on OpenShift (RHOSO). Namespaced resources are crucial for obtaining the status of the RHOSO cluster and troubleshooting any issues that may arise.
+
+### Importance of Namespaced Resources
+
+Namespaced resources in RHOSO provide isolation for the service pods, ensuring that each RHOSO deployment has its own namespace within the Red Hat OpenShift Container Platform (RHOCP) environment. This isolation is essential for managing and monitoring the RHOSO components effectively.
+
+The namespaced resources include:
+
+- RHOSO Custom Resource Definitions (CRDs)
+- RHOSO applied Custom Resources (CRs)
+- openstack and openstack-operators namespaces
+- RHOCP Events related to RHOSO namespaces
+- CSVs, pkgmanifests, subscriptions, installplans, and operatorgroup
+- Pods, Deployments, Statefulsets, ReplicaSets, Service, Routes, ConfigMaps, and relevant Secrets
+
+### Configuring Namespaced Resources
+
+To configure namespaced resources for RHOSO, follow these steps:
+
+1. **Create the openstack Namespace:**
+
+   Use the following command to create the openstack namespace:
+
+   ```
+   oc create namespace openstack
+   ```
+
+2. **Create the openstack-operators Namespace:**
+
+   Similarly, create the openstack-operators namespace using the following command:
+
+   ```
+   oc create namespace openstack-operators
+   ```
+
+3. **Deploy RHOSO CRDs and CRs:**
+
+   Deploy the RHOSO Custom Resource Definitions (CRDs) and applied Custom Resources (CRs) in the respective namespaces (openstack and openstack-operators). You can use the following commands as a reference:
+
+   For openstack namespace:
+
+   ```
+   oc project openstack
+   oc apply -f <path-to-rhoso-crds>
+   oc apply -f <path-to-rhoso-cr>
+   ```
+
+   For openstack-operators namespace:
+
+   ```
+   oc project openstack-operators
+   oc apply -f <path-to-rhoso-crds>
+   oc apply -f <path-to-rhoso-cr>
+   ```
+
+   Replace `<path-to-rhoso-crds>` and `<path-to-rhoso-cr>` with the actual paths

@@ -1,10 +1,12 @@
-name: REPLACEREPONAME
-title: FIXME Course Title
-version: 1
+name: rcb-demo-aks
+title:  Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline
+version: 1.0.0
 nav:
 - modules/ROOT/nav.adoc
 - modules/LABENV/nav.adoc
-- modules/chapter1/nav.adoc
-- modules/chapter2/nav.adoc
-- modules/chapter3/nav.adoc
+
+- modules/preparing-rhocp-for-rhoso-networks/nav.adoc
+
+- modules/hands-on-lab/nav.adoc
+
 - modules/appendix/nav.adoc

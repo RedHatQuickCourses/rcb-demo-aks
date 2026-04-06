@@ -1,0 +1,58 @@
+#  Setting up a RHOCP cluster
+
+== Setting up a RHOCP Cluster
+
+This section will guide you through the process of setting up a Red Hat OpenShift Container Platform (RHOCP) cluster, a prerequisite for deploying Red Hat OpenStack Services on OpenShift (RHOSO).
+
+### Prerequisites
+
+Before you begin, ensure you have the following:
+
+- Access to a workstation with cluster-admin privileges to the RHOCP cluster.
+
+### Step-by-Step Guide
+
+#### 3.2. PREPARING RHOCP FOR RHOSO NETWORKS
+
+Before deploying RHOSO, it's crucial to prepare your RHOCP cluster for RHOSO networks. This involves using the NMState Operator to connect the RHOCP worker nodes to your isolated networks.
+
+#### 3.2.1. Preparing RHOCP with isolated network interfaces
+
+To configure the interfaces for each isolated network on each worker node in the RHOCP cluster, you need to create a NodeNetworkConfigurationPolicy (nncp) CR. Here’s a simplified version of the process:
+
+1. **Install the NMState Operator**: If not already installed, you can install the NMState Operator using the OpenShift OperatorHub or by following the official NMState Operator installation guide.
+
+2. **Create a NodeNetworkConfigurationPolicy (nncp) CR**: This CR defines the desired network state for your nodes. Here’s a basic example:
+
+```yaml
+apiVersion: nmstate.io/v1alpha1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: <desired-state-name>
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: <node-name>
+  desiredState:
+    interfaces:
+    - name: <interface-name>
+      type: ethernet
+      state: up
+      ipv4:
+        address:
+          - <IP-address>/24
+        gateway4: <gateway-IP>
+        dns-nameservers:
+          - <DNS-server-IP>
+        autoconf: false
+        method: static
+    interfaces:
+    - name: <interface-name>-isolated
+      type: ethernet
+      state: up
+      ipv4:
+        address:
+          - <isolated-IP-address>/24
+        gateway4: <isolated-gateway-IP>
+        dns-nameservers:
+          - <DNS-server-IP>
+        autoconf:

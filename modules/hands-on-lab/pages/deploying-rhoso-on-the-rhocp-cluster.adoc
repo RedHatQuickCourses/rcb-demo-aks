@@ -1,0 +1,32 @@
+#  Deploying RHOSO on the RHOCP cluster
+
+== Deploying Red Hat OpenStack Services on OpenShift (RHOSO)
+
+3.2. Deploying RHOSO on the RHOCP Cluster
+
+After preparing the RHOCP cluster and namespaced resources, the next step is to deploy RHOSO on the RHOCP cluster. This process involves several key activities:
+
+3.2.1. Prerequisites
+
+- Ensure that the RHOSO environment is deployed on a Red Hat OpenShift Container Platform (RHOCP) cluster. For detailed instructions, refer to the Deploying Red Hat OpenStack Services on OpenShift guide.
+- Log in to a workstation with access to the RHOCP cluster as a user with cluster-admin privileges.
+
+3.2.2. Deploying RHOSO
+
+To deploy RHOSO on the RHOCP cluster, follow these steps:
+
+*Step 1: Access the RHOCP Console*
+
+- Open your web browser and navigate to the RHOCP console. The URL typically follows this pattern: `https://<cluster_name>-<domain_name>.apps.example.com`. Replace `<cluster_name>` and `<domain_name>` with your actual cluster name and domain.
+
+*Step 2: Create a New Project*
+
+- Once logged in, create a new project for RHOSO deployment. This helps in organizing resources and maintaining a clear separation between different environments. To create a new project, click on "Projects" in the left-hand menu, then click "Create Project." Enter a name for your project (e.g., `rhoso-project`) and click "Create."
+
+*Step 3: Deploy RHOSO Operator*
+
+- In the RHOCP console, navigate to "Operators" > "OperatorHub." Search for "Red Hat OpenStack Services on OpenShift" and click on the operator card. Click "Install" and follow the prompts to install the RHOSO Operator in your newly created project.
+
+*Step 4: Create RHOSO Custom Resource*
+
+- After the RHOSO Operator is installed, navigate to "Operators" > "Installed Operators" and click on the "Red Hat OpenStack Services on OpenShift" operator. Click "Create OpenStack Control Plane" to create a new RHOSO Custom Resource (CR). Fill in the necessary details, such as the CR name, and configure the required settings, including

@@ -1,22 +1,23 @@
-= An Example Quick Course
+=  Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline
 :navtitle: Home
 
 == Introduction
 
-Course Title: Course title FIXME
+Course Title:  Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline
 
 Description:
 Course description FIXME
 
 Duration: FIXME hours
 
-== Objectives
+== Topics covered in this course
 
-On completing this course, you should be able to:
 
-* Observable, measurable objective...
-* Observable, measurable objective...
-* Observable, measurable objective...
+*  Preparing RHOCP for RHOSO Networks
+
+*  Hands-on Lab
+
+
 
 == Prerequisites
 

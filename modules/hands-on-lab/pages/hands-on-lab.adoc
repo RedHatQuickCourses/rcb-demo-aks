@@ -1,0 +1,11 @@
+#  Hands-on Lab
+
+**Hands-on Lab**
+
+This hands-on lab section focuses on practical application of Red Hat OpenStack Services on OpenShift (RHOSO) concepts. It includes:
+
+- **Setting up a RHOCP cluster**: This involves configuring and deploying a Red Hat OpenShift Container Platform (RHOCP) cluster, which serves as the foundation for RHOSO.
+
+- **Deploying RHOSO on the RHOCP cluster**: Here, you will learn to install and configure RHOSO on the previously set up RHOCP cluster. This process involves understanding and managing namespaced resources, which are crucial for obtaining the status of the RHOSO cluster and troubleshooting any issues that may arise.
+
+- **Configuring namespaced resources for RHOSO**: This step involves customizing and setting up namespaced resources specifically for RHOSO. Namespaced resources are vital for managing and isolating objects in the cluster, ensuring smooth operation and maintenance of the RHOSO environment.

@@ -1,0 +1,2 @@
+* xref:preparing-rhocp-for-rhoso-networks.adoc[]
+** xref:namespaced-resources-understanding-their-importance-for-getting-the-status-of-the-rhoso-cluster-and-troubleshooting-problems.adoc[]

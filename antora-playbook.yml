@@ -1,6 +1,6 @@
 site:
-  title: FIXME Course Title
-  start_page: REPLACEREPONAME::index.adoc
+  title:  Red Hat OpenStack Services on OpenShift (RHOSO) Course Outline
+  start_page: rcb-demo-aks::index.adoc
 
 content:
   sources:
